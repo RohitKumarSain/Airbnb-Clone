@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../../partials/headmeta.ejs')%>
+        <title>Edit Info</title>
+        <link rel="stylesheet" href="../../../public/assets/css/style.css">
+        <link rel="stylesheet" href="../../../public/assets/css/hostrooms.css">
+        <link rel="stylesheet" href="../../../public/assets/css/admin.css">
+
+</head>
+
+<body>
+    <!-- Main header -->
+
+    <!-- Main body  section -->
+    <section class="main">
+        <div class="host_room">
+            <form method="post" action="/admin/products">
+                <div>
+                    <label for="property_title">Enter title of your property:</label>
+                    <input type="text" name="property_title" required>
+                </div>
+                <div>
+                    <label for="host_name">Enter Host name:</label>
+                    <input type="text" name="host_name" required>
+                </div>
+                <div>
+                    <label for="description">Write some description about your home:</label>
+                    <input type="text" name="description" required>
+                </div>
+                <div>
+                    <label for="acces">What is the availabilty of your Property:</label>
+                    <input type="text" name="acces" required>
+                </div>
+                <div>
+                    <label for="property_type">What is the type of Property i.e appartnemt or home:</label>
+                    <input type="text" name="property_type" required>
+                </div>
+                <div>
+                    <label for="room_type">what is room type:</label>
+                    <input type="text" name="room_type" required>
+                </div>
+                <div>
+                    <label for="address">Address:</label>
+                    <input type="text" name="country" placeholder="Country" required>
+                    <input type="text" name="government_area" placeholder="State" required>
+                    <input type="text" name="market" placeholder="Area" required>
+                </div>
+                <div>
+                    <label for="price">Price of your property:</label>
+                    <input type="number" name="price" required>
+                </div>
+                <div>
+                    <label for="bedrooms">Select availabilty:</label>
+                    <input type="number" name="bedrooms" placeholder="No of bedrooms available" required>
+                    <input type="number" name="beds" placeholder="No of beds available" required>
+                    <input type="number" name="bathrooms" placeholder="No of bathrooms available" required>
+                </div>
+                <div>
+                    <label for="guests">No of maximum guests can statay:</label>
+                    <input type="number" name="guests_included" required>
+                </div>
+                <div>
+                    <label for="imagge">Give image url of your property:</label>
+                    <input type="text" name="pictureurl" required>
+                </div>
+                <input type="submit" value="Host Your Property" placeholder="image url" required>
+            </form>
+        </div>
+        </form>
+
+    </section>
+    <%- include('../../../partials/footer.ejs')%>
+
+        <!-- Main body end -->
+        <!-- Footer -->
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/headmeta.ejs')%>
+        <title>
+            Search
+        </title>
+        <link rel="stylesheet" href="../public/assets/css/home_page.css">
+</head>
+
+<body>
+    <!-- Main header -->
+    <%- include('../partials/header.ejs')%>
+        <!-- Main body  section -->
+        <section class="main">
+            <div class="search container">Your Search Result for: <span>
+                    <%=searchfield%>
+                </span>
+            </div>
+            <div class="container flex property-area">
+                <%data.forEach((element)=>{%>
+                    <div class="property-card">
+                        <a href="/property/<%= element._id%>"><img src="<%= element.images.picture_url%>" alt="">
+                            <div class="details flex">
+                                <div class="info">
+                                    <div class="title">
+                                        <%= element.name%>
+                                    </div>
+                                    <div class="distance gray-text">
+                                        <%= element.address.country%>
+                                    </div>
+                                    <div class="date gray-text">
+                                        <%= element.property_type%>
+                                    </div>
+                                    <div class="price">
+                                        $ <%= element.price%>
+                                            per night
+                                    </div>
+                                </div>
+                                <div class="rating"><i class="fa-sharp fa-solid fa-star"">4.5</i></div>
+                        </div></a>
+                    </div>
+                    <%});%>
+            </div>
+        </section>
+        <!-- Main body end -->
+        <!-- Footer -->
+        <%- include('../partials/footer.ejs')%>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+#login_container {
+    margin: 2rem auto;
+    padding: 10px;
+    padding-inline: 2rem;
+    font-size: 1.7rem;
+    width: 32rem;
+    box-shadow: -4px 4px 40px -20px rgba(0, 0, 0, 0.61);
+    border-radius: 10px;
+}
+
+#login-form div {
+    padding-block: 1.5rem;
+}
+
+#login-form input {
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    border: 1px solid var(--graytext);
+    border-radius: 8px;
+    width: 28rem;
+}
+
+#login-form input[type="password"] {
+    font-size: 1.2rem;
+    padding: 15px;
+}
+
+#login-form input[type="submit"] {
+    font-size: 1.5rem;
+    color: white;
+    background-color: var(--logocolor);
+    border: none;
+}
+
+#login-form input:focus::-webkit-input-placeholder {
+    font-size: 0.75em;
+    position: relative;
+    top: -15px;
+    transition: 0.2s ease-out;
+}

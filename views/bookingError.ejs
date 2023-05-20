@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/headmeta.ejs')%>
+        <title>
+            Property Details
+        </title>
+
+        <link rel="stylesheet" href="../public/assets/css/bookingError.css">
+
+</head>
+
+<body>
+    <!-- Main header -->
+    <%- include('../partials/header.ejs')%>
+        <!-- show error message -->
+        <div class="booking_error">
+            <h3> You are not Logged In !</h3>
+            <h2>Please Login</h2>
+            <a href="/login">Login</a>
+        </div>
+        <!-- Main body end -->
+        <!-- Footer -->
+        <%- include('../partials/footer.ejs')%>
+
+</body>
+
+</html>

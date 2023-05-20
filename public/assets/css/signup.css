@@ -1,0 +1,65 @@
+/* signup form */
+.signup .container {
+    margin: 15px auto;
+    padding: 10px;
+    padding-inline: 2rem;
+
+    color: var(--graytext);
+    font-size: 1.2rem;
+    width: 52rem;
+    box-shadow: -4px 4px 40px -20px rgba(0, 0, 0, 0.61);
+    border-radius: 10px;
+}
+
+.signup input {
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    border: 1px solid var(--graytext);
+    border-radius: 8px;
+    width: 48rem;
+    margin-bottom: 1rem;
+}
+
+
+
+.signup input[type="password"] {
+    font-size: 1.2rem;
+    padding: 15px;
+}
+
+.signup input[type="submit"] {
+    font-size: 1.8rem;
+    color: white;
+    background-color: var(--logocolor);
+    border: none;
+}
+
+.signup input:focus::-webkit-input-placeholder {
+    font-size: 0.75em;
+    position: relative;
+    top: -15px;
+    transition: 0.2s ease-out;
+}
+
+
+.signup h4 {
+    margin-block: 5px;
+}
+
+.userType {
+    font-size: 1.8rem;
+    padding: 0.5rem;
+}
+
+.userType select {
+    font-size: 1.5rem;
+    border-radius: 8px;
+    color: var(--logocolor);
+}
+
+#error-message {
+    font-size: 1.5rem;
+    color: red;
+    padding: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

@@ -1,0 +1,65 @@
+<!-- Top header -->
+<section class="container header flex">
+    <!-- TH left -->
+    <a href='/'>
+        <div class="header-left flex">
+            <i class="fa-brands fa-airbnb icons"></i>
+            <h2>airbnb</h2>
+
+        </div>
+    </a>
+
+    <!--TH middle -->
+    <div class="header-middle">
+        <form action="/search" method="get">
+            <input id="mainsearch" name="query" type="text" placeholder="Anywhere  |  Any week  |  Add Guests">
+            <button type="submit" id="search-icon"><i class="fa-sharp fa-solid fa-magnifying-glass icons"></i></button>
+        </form>
+    </div>
+
+    <!-- TH Right -->
+    <div class="header-right flex">
+        <button id="airbnbYh"> <a href="/hostRooms">Airbnb Your Home</a> </button>
+        <button id="globe"><i class="fa-solid fa-globe icons"></i></button>
+        <button id="Header_user"><i class="fa-solid fa-bars icons"></i>
+            <i class="fa-solid fa-user icons"></i>
+        </button>
+
+    </div>
+    </div>
+</section>
+<div id="message-container" style="display: none;">
+    <div id="message">
+        <% if (cookies.jwt) { %>
+            <a style="color: blueviolet;">Welcome, you are logged in</a>
+
+            <a href="/logout">Logout</a>
+
+            <% } else { %>
+                <a href="/login" id="show_login">Login</a>
+
+                <% } %>
+                    <a href="/signup">Sign up</a>
+                    <hr>
+                    <a href="/hostRooms">Airbnb Your Home</a>
+                    <a href="/help">Help</a>
+                    <a style="color: chartreuse;" href="/admin/products">Admin Panel</a>
+    </div>
+</div>
+
+<script>
+    // JavaScript for showing and hiding the login button
+
+    const Header_user = document.getElementById("Header_user");
+    const messageContainer = document.getElementById("message-container");
+    Header_user.addEventListener("click", function () {
+        // Toggle the display of the message container
+        if (messageContainer.style.display === "none") {
+            messageContainer.style.display = "block";
+        } else {
+            messageContainer.style.display = "none";
+        }
+    });
+
+
+</script>

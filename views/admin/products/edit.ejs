@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../../partials/headmeta.ejs')%>
+        <title>Edit Info</title>
+        <link rel="stylesheet" href="../../../public/assets/css/style.css">
+        <link rel="stylesheet" href="../../../public/assets/css/hostrooms.css">
+        <link rel="stylesheet" href="../../../public/assets/css/admin.css">
+
+</head>
+
+<body>
+    <!-- Main header -->
+    <%- include('../../../partials/header.ejs')%>
+
+
+        <!-- Main body  section -->
+        <section class="main host_room">
+            <h1>Edit Product</h1>
+            <form method="post" action="/admin/products/<%= product._id %>">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" value="<%= product.name %>">
+                </div>
+                <div>
+                    <label for="description">Description:</label>
+                    <textarea class="form-control" id="description"
+                        name="description"><%= product.description %></textarea>
+                </div>
+                <div>
+                    <label for="price">Price:</label>
+                    <input type="text" class="form-control" id="price" name="price" value="<%= product.price %>">
+                </div>
+                <div>
+                    <label for="property_type">Property type :</label>
+                    <input type="text" name="property_type" value="<%= product.property_type %>">
+                </div>
+                <div>
+                    <label for="room_type">what is room type:</label>
+                    <input type="text" name="room_type" value="<%= product.room_type %>">
+                </div>
+                <div>
+                    <label for="address">Address:</label>
+                    <input type="text" name="country" placeholder="Country" value="<%= product.address.country %>">
+                    <input type="text" name="government_area" placeholder="State"
+                        value="<%= product.address.government_area %>">
+                    <input type="text" name="market" placeholder="Area" value="<%= product.address.market %>">
+                </div>
+                <div>
+                    <label for="imagge">Change image url :</label>
+                    <input type="text" name="pictureurl" value="<%= product.images.picture_url %>">
+                </div>
+                <button type="submit" class="save">Save</button>
+            </form>
+        </section>
+        <%- include('../../../partials/footer.ejs')%>
+
+            <!-- Main body end -->
+            <!-- Footer -->
+</body>
+
+</html>

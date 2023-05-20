@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/headmeta.ejs')%>
+        <title>
+            Login
+        </title>
+        <link rel="stylesheet" href="../public/assets/css/login.css">
+</head>
+
+<body>
+    <!-- Main header -->
+    <%- include('../partials/header.ejs')%>
+
+        <!-- Main body  section -->
+        <section class="main">
+            <div id="login_container">
+                <h1>Welcome to Airbnb</h1>
+
+
+                <form action="/login" method="POST" id="login-form">
+                    <div>
+                        <input type="text" id="user_Id" name="email" placeholder="Enter user Email" required><br>
+                    </div>
+                    <div>
+                        <input type="password" id="user_password" name="password" placeholder="Enter password" required>
+                    </div>
+                    <% if (messages.error) { %>
+                        <div class="alert">
+                            <%= messages.error %>
+                        </div>
+                        <% } %>
+                            <div>
+                                <input type="submit" value="Log in">
+                            </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Main body end -->
+        <!-- Footer -->
+        <%- include('../partials/footer.ejs')%>
+</body>
+
+</html>

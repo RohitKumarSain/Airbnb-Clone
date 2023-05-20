@@ -1,0 +1,90 @@
+/* for admin page design */
+
+.adminpageimage {
+    width: 15rem;
+    height: 10rem;
+    border-radius: 10px;
+}
+
+.delete {
+    color: red;
+    /* border-radius: 20px; */
+    /* border: 1px solid red; */
+    /* padding: 4px;
+    margin-left: 5px; */
+}
+
+.table {
+    border-radius: 1rem;
+    border: 1px solid whitesmoke;
+    width: 100%;
+}
+
+.edit {
+    color: rgb(13, 0, 255);
+    /* border-radius: 20px;
+    border: 1px solid rgba(14, 193, 163, 0.63); 
+    padding: 4px;
+    margin-right: 10px; */
+}
+
+
+thead {
+    border-radius: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    position: sticky;
+    top: 75px;
+    background-color: white;
+}
+
+td,
+th {
+    border-radius: 1rem;
+
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+th {
+    background-color: black;
+    padding-block: 0.5rem;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+tr:nth-child(odd) {
+    background-color: #f7f7f7;
+}
+
+td {
+    text-align: center;
+    border-bottom: 1px solid whitesmoke;
+
+}
+
+a {
+    padding: 5px;
+}
+
+.save {
+    padding: 1rem;
+    background-color: #ff385c;
+    color: #fff;
+    border-radius: 1rem;
+    display: block;
+    margin: auto;
+    width: 95%;
+}
+
+.new {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: var(--logocolor);
+    border: 1px solid transparent;
+    padding: 5px;
+}

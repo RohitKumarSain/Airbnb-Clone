@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/headmeta.ejs')%>
+        <title>
+            Proprty Page
+        </title>
+        <link rel="stylesheet" href="../public/assets/css/property_details.css">
+
+</head>
+
+<body>
+    <!-- Main header -->
+    <%- include('../partials/header.ejs')%>
+
+        <!-- Main body  section -->
+        <div class="property_section m">
+            <div class="container property_container">
+                <%data.forEach((element)=>{%>
+                    <div class="title">
+                        <h1 class="m">
+                            <%= element.name%>
+                        </h1>
+                        <h2 class="m"><i class="fa-sharp fa-solid fa-star"">4.5</i> · 
+                            <a href=""><%= element.number_of_reviews%> 
+                            reviews ·</a> <a href=""><%= element.address.government_area%> ,  </a>
+                            <a href=""> <%= element.address.market%> , </a>
+                            <a href="">  <%= element.address.country%> , </a>
+                        </h2>
+                </div>
+                <div class=" images grid grid-3">
+                                <img src="<%= element.images.picture_url%>" alt="">
+                                <img src="<%= element.images.picture_url%>" alt="">
+                                <img src="<%= element.images.picture_url%>" alt="">
+                                <img src="<%= element.images.picture_url%>" alt="">
+                                <img src="<%= element.images.picture_url%>" alt="">
+                    </div>
+                    <!-- Property details -->
+                    <div class="property_details flex">
+                        <!-- left side contains property details -->
+                        <div class="property-left">
+                            <div class="left flex">
+                                <div class="host_name">
+                                    <h1 class="m">
+                                        <%=element.room_type%> hosted by <%=element.host.host_name%>
+                                    </h1>
+                                    <h2>
+                                        <%= element.guests_included%> guests . <%=element.bedrooms%> bedrooms .
+                                                <%=element.beds%> beds .<%=element.bathrooms%> bathrooms
+                                    </h2>
+                                </div>
+                                <div class="host_logo">
+                                    <img src="<%= element.host.host_thumbnail_url%>" alt="">
+                                </div>
+                            </div>
+                            <div class="additional_info p">
+                                <div class="info_left">
+                                    <div class="left_logo">
+                                        <i class="fa-solid fa-location-pin"></i>
+                                    </div>
+                                    <div>
+                                        <h3>Great location</h3>
+                                        <p class="gray-text">100% of recent guests gave the location a 5-star rating.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="info_left">
+                                    <div class="left_logo">
+                                        <i class="fa-solid fa-key"></i>
+                                    </div>
+                                    <div>
+                                        <h3>Great check-in experience</h3>
+                                        <p class="gray-text">100% of recent guests gave the check-in process a 5-star
+                                            rating.</p>
+                                    </div>
+                                </div>
+                                <div class="info_left">
+                                    <div class="left_logo">
+                                        <i class="fa-solid fa-paw"></i>
+                                    </div>
+                                    <div>
+                                        <h3>Furry friends welcome</h3>
+                                        <p class="gray-text">Bring your pets along for the stay.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="insurance m p">
+                                <h1 style="font-size: 3.5rem;">
+                                    <span>air</span>cover
+                                </h1>
+                                <p class="gray-text p">
+                                    Every booking includes free protection from Host cancellations, listing
+                                    inaccuracies,
+                                    and other issues like trouble
+                                    checking in.</p>
+                            </div>
+                            <div class="more_about_property">
+                                <p class="access f-m m">
+                                    <%=element.access%>
+                                </p>
+                                <p class="summary f-m m gray-text">
+                                    <%=element.description%>
+                                </p>
+                            </div>
+
+
+                            <div class="amenities">
+                                <h1>What this place offers :</h1>
+                                <div class="amenities_item">
+                                    <ul>
+                                        <% let amenities=element.amenities; amenities.forEach((item)=>{%>
+                                            <li>
+                                                <%=item%>
+                                            </li>
+                                            <%});%>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Right side for booking property -->
+                        <div class=" booking flex">
+                            <form id="booking-form" action="/booking">
+                                <div class="price">$<%= element.price%><span style="color:black;"> night</span>
+                                </div><br>
+                                <div class="date_no_of">
+                                    <div class="booking_date flex">
+                                        <div class="check-in">
+                                            <label class="bold" for="">CHECK-IN</label><br>
+                                            <input type="date" id="date1" placeholder="">
+                                        </div>
+                                        <div class="check=out">
+                                            <label class="bold" for="">CHECK-OUT</label><br>
+                                            <input type="date" id="date2" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="no_of_guests">
+                                        <label class="bold" for=""> Enter No Of Guests</label> <br>
+                                        <input id="no_of_guest" type="number" required>
+                                    </div>
+                                </div>
+
+                                <input class="submit" type="submit" value="Reserve">
+                                <h3 class="center gray-text">You won't be charged yet</h3>
+
+                                <div class="flex">
+                                    <h2>$ <%= element.price%> X 5 nights</h2>
+                                    <h2>$ <%= element.price *5 %></h2>
+                                </div>
+                                <div class="flex">
+                                    <h2>Service Fee</h2>
+                                    <h2>$ 0</h2>
+                                </div>
+                                <hr>
+                                <div class="flex">
+                                    <h2>Total Before Taxes</h2>
+                                    <h2>$ <%= element.price *5 %></h2>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <%});%>
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <%- include('../partials/footer.ejs')%>
+
+
+
+            <!-- Main body end -->
+            <!-- Footer -->
+
+            <script>
+                document.getElementById("date1").valueAsDate = new Date();
+                document.getElementById("date2").valueAsDate = new Date(Date.now() + 5 * 24 * 60 * 60 * 1000);
+
+
+            </script>
+
+</body>
+
+</html>

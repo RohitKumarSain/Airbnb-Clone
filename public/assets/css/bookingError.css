@@ -1,0 +1,28 @@
+     .booking_error {
+         width: 50rem;
+         height: 30rem;
+         text-align: center;
+         padding: 4rem;
+         margin: 5rem auto;
+         border-radius: 10px;
+         font-size: 2rem;
+         box-shadow: -4px 8px 80px -20px rgba(212, 112, 227, 0.773);
+     }
+
+     .booking_error a {
+         border-radius: 5px;
+         background: rgba(161, 209, 209, 0.932);
+         color: white;
+         background-color: var(--logocolor);
+         padding: 0.7rem;
+         font-size: 2rem;
+     }
+
+     h3 {
+         margin-block: 2rem;
+         color: red;
+     }
+
+     h2 {
+         margin-block: 2rem;
+     }

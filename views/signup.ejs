@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/headmeta.ejs')%>
+        <link rel="stylesheet" href="../public/assets/css/signup.css">
+        <title>
+            Signup
+        </title>
+</head>
+
+<body>
+    <!-- Main header -->
+    <%- include('../partials/header.ejs')%>
+
+        <!-- Signup page -->
+        <div class="signup">
+            <div class="container">
+                <form action="/signup" id="signup-form" method="POST">
+                    <div class="userType">
+                        <label for="userType">*User Type:</label>
+                        <select id="UserType" name="UserType" required>
+                            <option value="" selected>Select User</option>
+                            <option value="user">user</option>
+                            <option value="admin">admin</option>
+                        </select>
+                        <span id="error-message"></span>
+                    </div>
+                    <div>
+                        <input type="text" id="firstname" name="firstname" placeholder="First Name" required><br>
+                        <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
+                        <h4>Make sure it matches the name on your Government Id card</h4>
+                    </div>
+                    <div>
+                        <input placeholder="Date Of Birth" name="dob" type="text" onfocus="(this.type='date')"
+                            onblur="(this.type='text')" id="date" required>
+                        <h4>To sign up, you need to be at least 18. Your birthday won’t be shared with other people who
+                            use
+                            Airbnb.</h4>
+                    </div>
+                    <div>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <h4>We'll email you trip confirmations and receipts.</h4>
+                    </div>
+                    <div>
+                        <input type="password" id="password" name="password" placeholder="Password" minlength="6"
+                            required>
+                    </div>
+                    <div>
+                        <input type="password" id="confirm-password" name="confirmpassword"
+                            placeholder="Confirm Password" minlength="6" required>
+                    </div>
+                    <div id="error-message">
+                        <% if (messages.error) { %>
+                            <div class="alert">
+                                <%= messages.error %>
+                            </div>
+                            <% } %>
+                    </div>
+
+                    <div>
+                        <input type="submit" value="Sign up">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer -->
+
+        <script>
+            const form = document.getElementById('signup-form');
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();  // prevent the form from submitting
+                const password = document.getElementById('password').value;
+                const confirmpassword = document.getElementById('confirm-password').value;
+                const errorMessage = document.getElementById('error-message');
+
+                if (password !== confirmpassword) {
+
+                    errorMessage.innerHTML = 'Passwords do not match ! Try again by entering same password';
+
+                } else {
+                    form.submit();
+                }
+            });
+        </script>
+
+</body>
+
+</html>
